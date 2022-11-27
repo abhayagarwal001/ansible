@@ -1,0 +1,10 @@
+---
+#Playbook for implement roles
+
+- hosts: all
+  user: ansible
+  become: yes
+  connection: ssh
+  
+  roles:
+   - role: webserver
