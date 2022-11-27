@@ -1,0 +1,13 @@
+---
+# Target and Task Playbook
+
+- name: Playbook to install httpd 
+  hosts: all
+  user: ansible
+  become: yes
+  connection: ssh
+
+  tasks:
+   - name: Install httpd package on linux
+     action: yum name=httpd state=present
+
