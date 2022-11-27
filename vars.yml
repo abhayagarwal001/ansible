@@ -1,0 +1,15 @@
+---
+#MY Variable Playbook
+#
+- name: Playbook to learn variable concept
+  hosts: all
+  user: ansible
+  become: yes
+  connection: ssh
+
+  vars:
+   pkgname: docker
+
+  tasks:
+   - name: Install docker service
+     action: yum name='{{pkgname}}' state=present
