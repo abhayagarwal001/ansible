@@ -1,0 +1,10 @@
+---
+#Target section Playbook
+
+- name: Playbook to gathers facts
+  hosts: demo
+  user: ansible
+  become: sudo
+  connection: ssh
+  gather_facts: yes
+  
