@@ -1,0 +1,19 @@
+---
+#Playbook for Handlers
+
+- name: Playbook for implement handlers concept
+  hosts: all
+  user: ansible
+  become: yes
+  connection: ssh
+
+  tasks:
+   - name: Install docker service
+     action: yum name=docker state=present
+     notify: start service
+
+  handlers:
+   - name: start service
+     action: service name=docker state=started
+
+
