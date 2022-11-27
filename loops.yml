@@ -1,0 +1,18 @@
+---
+# Playbook to implement loop concepts
+
+- name: Playbook to implement loop concept
+  hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+
+  tasks:
+   - name: Add a list of user
+     user: name='{{item}}' state=present
+     with_items: 
+      - bhupinder
+      - vijay
+      - ajay
+
+
